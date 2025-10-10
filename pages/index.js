@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import NavBar from '../components/NavBar'
 import Image from 'next/image'
-
-// framer-motion을 dynamic import로 변경
 import dynamic from 'next/dynamic'
+
 const MotionDiv = dynamic(() => import('framer-motion').then(mod => mod.motion.div), {
   ssr: false
 })
@@ -43,7 +42,57 @@ export default function Home() {
           </MotionDiv>
         </main>
 
-        {/* 나머지 섹션들... */}
+        <section id="about" className="py-24 site-container">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-semibold mb-4">About</h2>
+            <p>D4rkSt4rs는 게임과 소프트웨어를 개발하는 스튜디오입니다. 게임 개발, 도구 제작, 시스템 설계를 진행합니다.</p>
+          </div>
+        </section>
+
+        <section id="projects" className="py-24 site-container">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-semibold mb-6">Projects</h2>
+            <div className="grid gap-6">
+              <div className="p-4 border border-white/10 rounded">
+                <h3 className="font-medium"><a href='https://playentry.org/project/68c6b22648d3d76bd9234c49'>Escape The BackRooms in Entry</a></h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="team" className="py-24 site-container">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-semibold mb-6">Team</h2>
+            <div className="flex items-center gap-4">
+              <Image 
+                src="/d4rkst4rs.png" 
+                alt="You" 
+                width={72} 
+                height={72} 
+                className="rounded"
+                unoptimized // 정적 빌드에서 필요
+              />
+              <div>
+                <div className="font-medium">D4rkSt4rGod</div>
+                <div className="text-sm text-white/70">스튜디오 설립자</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="py-24 site-container">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-semibold mb-4">Contact</h2>
+            <p>email : <a href="https://gmail.com" className="underline">d4rkst4rgod@gmail.com</a></p>
+            <p className="mt-2">Youtube : <a href="https://youtube.com/@d4rkst4rgod" className="underline">@d4rkst4rgod</a></p>
+            <p className="mt-2">GitHub : <a href="https://github.com/d4rkst4rgod" className="underline">github.com/d4rkst4rgod</a></p>
+            <p className="mt-2">Discord: <a href="https://discord.com/channel/@me" className="underline">@never.x_star</a></p>
+          </div>
+        </section>
+
+        <footer className="py-10 text-center text-sm text-white/60 site-container">
+          © D4rkSt4rs
+        </footer>
       </div>
     </>
   )
