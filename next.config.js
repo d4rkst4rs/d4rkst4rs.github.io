@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  // 이 설정이 필수!
+  output: 'export',
   trailingSlash: true,
   images: {
-    unoptimized: true
+    unoptimized: true  // ← 이 설정이 있어야 next/image 작동
   },
-  // basePath와 assetPrefix는 제거 또는 빈 문자열
+  basePath: '',
+  assetPrefix: '',
 }
 
 module.exports = nextConfig
