@@ -93,6 +93,7 @@ export default function Home() {
               <p>YouTube: <a href="https://youtube.com/@d4rkst4rgod" className="underline hover:text-blue-400">@d4rkst4rgod</a></p>
               <p>GitHub: <a href="https://github.com/d4rkst4rgod" className="underline hover:text-blue-400">github.com/d4rkst4rgod</a></p>
               <p>Discord: <a href="https://discord.com/channel/@me" className="underline hover:text-blue-400">@never.x_star</a></p>
+              <p>Entry: <a href="https://naver.me/xTS8njxd" className="underline hover:text-blue-400">닥스갓</a></p>
             </div>
           </div>
         </section>
