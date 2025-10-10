@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global setup */
+html, body, #__next { height: 100%; }
+body {
+  @apply bg-black text-white antialiased;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  user-select: none;;
+}
+
+/* Starfield layers */
+/*.starfield { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
+.stars, .stars2, .stars3 {
+  position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;
+  background-image: radial-gradient(#ffffff 1px, rgba(255,255,255,0) 1px);
+  background-repeat: repeat;
+}
+.stars { background-size: 3px 3px; opacity: 0.6; animation: starMove 120s linear infinite; }
+.stars2 { background-size: 6px 6px; opacity: 0.3; animation: starMove 240s linear infinite; }
+.stars3 { background-size: 12px 12px; opacity: 0.12; animation: starMove 480s linear infinite; }
+@keyframes starMove { from { background-position: 0 0; } to { background-position: 0 -2000px; } }*/
+
+/* Hero glow */
+.hero-title {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 18px rgba(255,255,255,0.9), 0 0 30px rgba(255,255,255,0.25);
+}
+.subtitle { color: rgba(255,255,255,0.85); }
+
+/* site container */
+.site-container { position: relative; z-index: 10; padding-left: 1rem; padding-right: 1rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
+
+/* simple link style */
+a { color: inherit; text-decoration: none; }
+nav a { opacity: 0.9; padding: 6px 10px; border-radius: 6px; }
+nav a:hover { background: rgba(255,255,255,0.03); }
