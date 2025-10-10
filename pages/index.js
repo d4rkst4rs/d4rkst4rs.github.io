@@ -14,7 +14,7 @@ export default function Home() {
         <title>D4rkSt4rs</title>
       </Head>
 
-      {/* Starfield 제거하고 간단한 배경색으로 */}
+      {/* 전체 배경 검정색 통일 */}
       <div className="min-h-screen bg-black text-white relative overflow-hidden">
         
         <NavBar />
@@ -47,8 +47,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section id="projects" className="py-24 px-4 bg-gray-900">
+        {/* Projects Section - 배경색 검정으로 통일 */}
+        <section id="projects" className="py-24 px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">Projects</h2>
             <div className="grid gap-6">
@@ -84,15 +84,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="py-24 px-4 bg-gray-900">
+        {/* Contact Section - 이모지 제거 및 배경색 검정으로 통일 */}
+        <section id="contact" className="py-24 px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Contact</h2>
             <div className="space-y-3 text-lg">
-              <p>📧 Email: <a href="mailto:d4rkst4rgod@gmail.com" className="underline hover:text-blue-400">d4rkst4rgod@gmail.com</a></p>
-              <p>🎥 YouTube: <a href="https://youtube.com/@d4rkst4rgod" className="underline hover:text-blue-400">@d4rkst4rgod</a></p>
-              <p>💻 GitHub: <a href="https://github.com/d4rkst4rgod" className="underline hover:text-blue-400">github.com/d4rkst4rgod</a></p>
-              <p>💬 Discord: <a href="https://discord.com/channel/@me" className="underline hover:text-blue-400">@never.x_star</a></p>
+              <p>Email: <a href="mailto:d4rkst4rgod@gmail.com" className="underline hover:text-blue-400">d4rkst4rgod@gmail.com</a></p>
+              <p>YouTube: <a href="https://youtube.com/@d4rkst4rgod" className="underline hover:text-blue-400">@d4rkst4rgod</a></p>
+              <p>GitHub: <a href="https://github.com/d4rkst4rgod" className="underline hover:text-blue-400">github.com/d4rkst4rgod</a></p>
+              <p>Discord: <a href="https://discord.com/channel/@me" className="underline hover:text-blue-400">@never.x_star</a></p>
             </div>
           </div>
         </section>
