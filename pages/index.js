@@ -29,11 +29,11 @@ const sectionVariants = {
 const cardVariants = {
   offscreen: {
     opacity: 0,
-    scale: 0.9
+    y: 30
   },
   onscreen: {
     opacity: 1,
-    scale: 1,
+    y: 0,
     transition: {
       duration: 0.6,
       ease: "easeOut"
@@ -80,7 +80,7 @@ export default function Home() {
           </MotionDiv>
         </main>
 
-        {/* About Section - 원래 멘트로 복구 */}
+        {/* About Section */}
         <section id="about" className="py-24 px-4">
           <MotionDiv
             initial="offscreen"
@@ -95,42 +95,47 @@ export default function Home() {
           </MotionDiv>
         </section>
 
-        {/* Projects Section - 디자인 유지하며 실제 프로젝트만 표시 */}
+        {/* Projects Section - 애니메이션 통일 */}
         <section id="projects" className="py-24 px-4">
-          <MotionDiv
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={sectionVariants}
-          >
-            <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto">
+            {/* 섹션 제목도 같은 애니메이션 적용 */}
+            <MotionDiv
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={sectionVariants}
+            >
               <h2 className="text-3xl font-bold mb-8">Projects</h2>
-              <div className="grid gap-6">
-                <MotionDiv
-                  variants={cardVariants}
-                  whileHover={{ scale: 1.02 }}
-                  className="group p-6 border border-gray-700 rounded-lg hover:border-gray-500 transition-all duration-300 cursor-pointer"
-                >
-                  <h3 className="font-bold text-xl mb-3 group-hover:text-gray-300 transition-colors">
-                    <a 
-                      href='https://playentry.org/project/68c6b22648d3d76bd9234c49' 
-                      className="block"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Escape The BackRooms in Entry
-                    </a>
-                  </h3>
-                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
-                    엔트리 플랫폼에서 구현한 공포 어드벤처 게임
-                  </p>
-                </MotionDiv>
+            </MotionDiv>
+            
+            {/* 프로젝트 그리드 - 제목과 연계된 애니메이션 */}
+            <MotionDiv
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+              className="grid gap-6"
+            >
+              <div className="group p-6 border border-gray-700 rounded-lg hover:border-gray-500 transition-all duration-300 cursor-pointer">
+                <h3 className="font-bold text-xl mb-3 group-hover:text-gray-300 transition-colors">
+                  <a 
+                    href='https://playentry.org/project/68c6b22648d3d76bd9234c49' 
+                    className="block"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Escape The BackRooms in Entry
+                  </a>
+                </h3>
+                <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
+                  엔트리 플랫폼에서 구현한 공포 어드벤처 게임
+                </p>
               </div>
-            </div>
-          </MotionDiv>
+            </MotionDiv>
+          </div>
         </section>
 
-        {/* Team Section - 팀원 추가를 위한 유연한 구조 */}
+        {/* Team Section */}
         <section id="team" className="py-24 px-4">
           <MotionDiv
             initial="offscreen"
@@ -141,9 +146,7 @@ export default function Home() {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold mb-8">Team</h2>
               
-              {/* 팀 멤버 컨테이너 - 향후 팀원 추가시 이 부분에 추가하면 됨 */}
               <div className="space-y-6">
-                {/* 현재 팀원 */}
                 <MotionDiv
                   variants={cardVariants}
                   className="flex items-center gap-6 p-6 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors"
@@ -166,7 +169,7 @@ export default function Home() {
           </MotionDiv>
         </section>
 
-        {/* Contact Section - 원래 형태로 복구 및 이모지 제거 */}
+        {/* Contact Section */}
         <section id="contact" className="py-24 px-4">
           <MotionDiv
             initial="offscreen"
@@ -187,7 +190,7 @@ export default function Home() {
           </MotionDiv>
         </section>
 
-        {/* Footer - 유지 */}
+        {/* Footer */}
         <footer className="py-12 text-center text-gray-500">
           <MotionDiv
             initial={{ opacity: 0 }}
