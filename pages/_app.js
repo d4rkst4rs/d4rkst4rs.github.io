@@ -7,8 +7,8 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>D4rkSt4rs</title>
-        <link rel="icon" href="public/favicon.ico" sizes="64x64"/>
-        <link rel="apple-touch-icon" href="public/d4rkst4rs-64px.png"/>
+        <link rel="icon" href="/favicon.ico" sizes="64x64" />
+        <link rel="apple-touch-icon" href="/logo.png" />
       </Head>
       <Component {...pageProps} />
     </>
