@@ -95,7 +95,7 @@ export default function Home() {
           </MotionDiv>
         </section>
 
-        {/* Projects Section - 검정색 통일 및 실제 프로젝트만 표시 */}
+        {/* Projects Section - 디자인 유지하며 실제 프로젝트만 표시 */}
         <section id="projects" className="py-24 px-4">
           <MotionDiv
             initial="offscreen"
@@ -109,18 +109,21 @@ export default function Home() {
                 <MotionDiv
                   variants={cardVariants}
                   whileHover={{ scale: 1.02 }}
-                  className="p-6 border border-gray-700 rounded-lg hover:border-gray-500 transition-all duration-300"
+                  className="group p-6 border border-gray-700 rounded-lg hover:border-blue-500 transition-all duration-300 cursor-pointer"
                 >
-                  <h3 className="font-medium text-xl">
+                  <h3 className="font-bold text-xl mb-3 group-hover:text-blue-400 transition-colors">
                     <a 
-                      href='https://playentry.org/project/68c6b22648d3d76bd9234c49'
-                      className="hover:text-blue-400 transition-colors"
+                      href='https://playentry.org/project/68c6b22648d3d76bd9234c49' 
+                      className="block"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       Escape The BackRooms in Entry
                     </a>
                   </h3>
+                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
+                    엔트리 플랫폼에서 구현한 공포 어드벤처 게임
+                  </p>
                 </MotionDiv>
               </div>
             </div>
@@ -139,7 +142,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-8">Team</h2>
               
               {/* 팀 멤버 컨테이너 - 향후 팀원 추가시 이 부분에 추가하면 됨 */}
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {/* 현재 팀원 */}
                 <MotionDiv
                   variants={cardVariants}
@@ -158,25 +161,6 @@ export default function Home() {
                     <div className="text-gray-400">스튜디오 설립자</div>
                   </div>
                 </MotionDiv>
-                
-                {/* 향후 팀원을 추가할 때는 아래와 같은 구조로 추가하면 됩니다:
-                <MotionDiv
-                  variants={cardVariants}
-                  className="flex items-center gap-6 p-6 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors"
-                >
-                  <Image 
-                    src="/teammate-image.png" 
-                    alt="팀원 이름 - 역할" 
-                    width={80} 
-                    height={80} 
-                    className="rounded-full"
-                  />
-                  <div>
-                    <div className="font-medium text-xl">팀원 이름</div>
-                    <div className="text-gray-400">역할</div>
-                  </div>
-                </MotionDiv>
-                */}
               </div>
             </div>
           </MotionDiv>

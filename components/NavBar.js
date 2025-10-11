@@ -18,7 +18,7 @@ export default function NavBar() {
               className="rounded"
             />
             <div className="text-xl font-bold whitespace-nowrap">
-              D4rkSt4rs
+              <a href='https://d4rkst4rs.gitub.io'>D4rkSt4rs</a>
             </div>
           </div>
           
