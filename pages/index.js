@@ -109,9 +109,9 @@ export default function Home() {
                 <MotionDiv
                   variants={cardVariants}
                   whileHover={{ scale: 1.02 }}
-                  className="group p-6 border border-gray-700 rounded-lg hover:border-blue-500 transition-all duration-300 cursor-pointer"
+                  className="group p-6 border border-gray-700 rounded-lg hover:border-gray-500 transition-all duration-300 cursor-pointer"
                 >
-                  <h3 className="font-bold text-xl mb-3 group-hover:text-blue-400 transition-colors">
+                  <h3 className="font-bold text-xl mb-3 group-hover:text-gray-300 transition-colors">
                     <a 
                       href='https://playentry.org/project/68c6b22648d3d76bd9234c49' 
                       className="block"
