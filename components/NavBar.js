@@ -4,11 +4,32 @@ import Image from 'next/image'
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
 
+  // 부드러운 스크롤 함수
+  const smoothScroll = (targetId) => {
+    const targetElement = document.getElementById(targetId)
+    if (targetElement) {
+      // 모바일 메뉴 닫기
+      setIsOpen(false)
+      
+      // 부드러운 스크롤
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
+
+  // 링크 클릭 핸들러
+  const handleLinkClick = (e, targetId) => {
+    e.preventDefault()
+    smoothScroll(targetId)
+  }
+
   return (
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-gray-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16">
-          {/* 로고 추가 */}
+          {/* 로고 */}
           <div className="flex items-center gap-3">
             <Image 
               src="/d4rkst4rs.png" 
@@ -18,16 +39,40 @@ export default function NavBar() {
               className="rounded"
             />
             <div className="text-xl font-bold whitespace-nowrap">
-              <a href='https://d4rkst4rs.gitub.io'>D4rkSt4rs</a>
+              D4rkSt4rs
             </div>
           </div>
           
           {/* 데스크탑 메뉴 */}
           <div className="hidden md:flex space-x-8">
-            <a href="#about" className="hover:text-gray-300 transition-colors">About</a>
-            <a href="#projects" className="hover:text-gray-300 transition-colors">Projects</a>
-            <a href="#team" className="hover:text-gray-300 transition-colors">Team</a>
-            <a href="#contact" className="hover:text-gray-300 transition-colors">Contact</a>
+            <a 
+              href="#about" 
+              onClick={(e) => handleLinkClick(e, 'about')}
+              className="hover:text-gray-300 transition-colors cursor-pointer"
+            >
+              About
+            </a>
+            <a 
+              href="#projects" 
+              onClick={(e) => handleLinkClick(e, 'projects')}
+              className="hover:text-gray-300 transition-colors cursor-pointer"
+            >
+              Projects
+            </a>
+            <a 
+              href="#team" 
+              onClick={(e) => handleLinkClick(e, 'team')}
+              className="hover:text-gray-300 transition-colors cursor-pointer"
+            >
+              Team
+            </a>
+            <a 
+              href="#contact" 
+              onClick={(e) => handleLinkClick(e, 'contact')}
+              className="hover:text-gray-300 transition-colors cursor-pointer"
+            >
+              Contact
+            </a>
           </div>
           
           {/* 모바일 메뉴 버튼 */}
@@ -47,10 +92,34 @@ export default function NavBar() {
         {isOpen && (
           <div className="md:hidden bg-black/95 border-t border-gray-800">
             <div className="py-2 space-y-1">
-              <a href="#about" className="block px-4 py-2 hover:bg-gray-800">About</a>
-              <a href="#projects" className="block px-4 py-2 hover:bg-gray-800">Projects</a>
-              <a href="#team" className="block px-4 py-2 hover:bg-gray-800">Team</a>
-              <a href="#contact" className="block px-4 py-2 hover:bg-gray-800">Contact</a>
+              <a 
+                href="#about" 
+                onClick={(e) => handleLinkClick(e, 'about')}
+                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer"
+              >
+                About
+              </a>
+              <a 
+                href="#projects" 
+                onClick={(e) => handleLinkClick(e, 'projects')}
+                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer"
+              >
+                Projects
+              </a>
+              <a 
+                href="#team" 
+                onClick={(e) => handleLinkClick(e, 'team')}
+                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer"
+              >
+                Team
+              </a>
+              <a 
+                href="#contact" 
+                onClick={(e) => handleLinkClick(e, 'contact')}
+                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer"
+              >
+                Contact
+              </a>
             </div>
           </div>
         )}
