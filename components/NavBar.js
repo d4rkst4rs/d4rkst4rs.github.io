@@ -4,18 +4,41 @@ import Image from 'next/image'
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
 
-  // 부드러운 스크롤 함수
+  // 부드러운 스크롤 함수 (개선된 버전)
   const smoothScroll = (targetId) => {
     const targetElement = document.getElementById(targetId)
     if (targetElement) {
       // 모바일 메뉴 닫기
       setIsOpen(false)
       
-      // 부드러운 스크롤
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      })
+      // 현재 스크롤 위치
+      const startPosition = window.pageYOffset
+      // 대상 요소의 위치
+      const targetPosition = targetElement.getBoundingClientRect().top + startPosition - 80 // NavBar 높이 고려
+      // 거리
+      const distance = targetPosition - startPosition
+      // 지속 시간 (거리에 비례)
+      const duration = 1000
+      let startTime = null
+
+      // 애니메이션 함수
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime
+        const timeElapsed = currentTime - startTime
+        const run = easeInOutQuad(timeElapsed, startPosition, distance, duration)
+        window.scrollTo(0, run)
+        if (timeElapsed < duration) requestAnimationFrame(animation)
+      }
+
+      // 이징 함수
+      function easeInOutQuad(t, b, c, d) {
+        t /= d / 2
+        if (t < 1) return c / 2 * t * t + b
+        t--
+        return -c / 2 * (t * (t - 2) - 1) + b
+      }
+
+      requestAnimationFrame(animation)
     }
   }
 
@@ -95,28 +118,28 @@ export default function NavBar() {
               <a 
                 href="#about" 
                 onClick={(e) => handleLinkClick(e, 'about')}
-                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer"
+                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer transition-colors"
               >
                 About
               </a>
               <a 
                 href="#projects" 
                 onClick={(e) => handleLinkClick(e, 'projects')}
-                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer"
+                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer transition-colors"
               >
                 Projects
               </a>
               <a 
                 href="#team" 
                 onClick={(e) => handleLinkClick(e, 'team')}
-                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer"
+                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer transition-colors"
               >
                 Team
               </a>
               <a 
                 href="#contact" 
                 onClick={(e) => handleLinkClick(e, 'contact')}
-                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer"
+                className="block px-4 py-2 hover:bg-gray-800 cursor-pointer transition-colors"
               >
                 Contact
               </a>
