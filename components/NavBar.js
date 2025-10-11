@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -7,8 +8,18 @@ export default function NavBar() {
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-gray-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16">
-          <div className="text-xl font-bold whitespace-nowrap">
-            D4rkSt4rs
+          {/* 로고 추가 */}
+          <div className="flex items-center gap-3">
+            <Image 
+              src="/d4rkst4rs.png" 
+              alt="D4rkSt4rs Studio Logo" 
+              width={32} 
+              height={32} 
+              className="rounded"
+            />
+            <div className="text-xl font-bold whitespace-nowrap">
+              D4rkSt4rs
+            </div>
           </div>
           
           {/* 데스크탑 메뉴 */}
