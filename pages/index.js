@@ -132,6 +132,8 @@ export default function Home() {
                 </p>
               </div>
             </MotionDiv>
+            
+            {/* 프로젝트 추가는 여기에 */}
           </div>
         </section>
 
@@ -160,11 +162,33 @@ export default function Home() {
                     priority
                   />
                   <div>
-                    <div className="font-medium text-xl">D4rkSt4rGod</div>
+                    <div className="font-medium text-xl"><a href='https://naver.me/xTS8njxd'>D4rkSt4rGod</a></div>
                     <div className="text-gray-400">스튜디오 설립자</div>
                   </div>
                 </MotionDiv>
               </div>
+
+              <div className="space-y-6">
+                <MotionDiv
+                  variants={cardVariants}
+                  className="flex items-center gap-6 p-6 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors"
+                >
+                  <Image 
+                    src="/d4rkst4rs.png" 
+                    alt="흑지장 - 에셋 팀장" 
+                    width={80} 
+                    height={80} 
+                    className="rounded-full"
+                    priority
+                  />
+                  <div>
+                    <div className="font-medium text-xl"><a href='https://playentry.org/profile/6861fa919d7602c5610c5a7c/project?sort=created&term=all&isOpen=all'>흑지장</a></div>
+                    <div className="text-gray-400">에셋 팀장</div>
+                  </div>
+                </MotionDiv>
+              </div>
+
+              {/* 팀추가는 여기에 */}
             </div>
           </MotionDiv>
         </section>
