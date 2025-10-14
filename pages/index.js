@@ -41,6 +41,31 @@ const cardVariants = {
   }
 }
 
+// 팀 멤버 데이터 - 이렇게 분리해두면 관리가 쉬워요!
+const teamMembers = [
+  {
+    name: "D4rkSt4rGod",
+    role: "스튜디오 설립자",
+    image: "/d4rkst4rs.png",
+    link: "https://naver.me/xTS8njxd",
+    alt: "D4rkSt4rGod - 스튜디오 설립자 및 리드 개발자"
+  },
+  {
+    name: "흑지장",
+    role: "디자인 팀장", 
+    image: "/d4rkst4rs.png", // 실제 이미지 경로로 변경해주세요
+    link: "https://playentry.org/profile/6861fa919d7602c5610c5a7c/project?sort=created&term=all&isOpen=all",
+    alt: "흑지장 - 디자인 팀장"
+  },
+  // {
+  //   name: "새로운 팀원", // 실제 이름으로 변경해주세요
+  //   role: "역할", // 실제 역할로 변경해주세요
+  //   image: "/d4rkst4rs.png", // 실제 이미지 경로로 변경해주세요
+  //   link: "#", // 실제 링크로 변경해주세요
+  //   alt: "새로운 팀원 - 역할" // 실제 정보로 변경해주세요
+  // }
+]
+
 export default function Home() {
   return (
     <>
@@ -95,10 +120,9 @@ export default function Home() {
           </MotionDiv>
         </section>
 
-        {/* Projects Section - 애니메이션 통일 */}
+        {/* Projects Section */}
         <section id="projects" className="py-24 px-4">
           <div className="max-w-4xl mx-auto">
-            {/* 섹션 제목도 같은 애니메이션 적용 */}
             <MotionDiv
               initial="offscreen"
               whileInView="onscreen"
@@ -108,7 +132,6 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-8">Projects</h2>
             </MotionDiv>
             
-            {/* 프로젝트 그리드 - 제목과 연계된 애니메이션 */}
             <MotionDiv
               initial="offscreen"
               whileInView="onscreen"
@@ -132,12 +155,10 @@ export default function Home() {
                 </p>
               </div>
             </MotionDiv>
-            
-            {/* 프로젝트 추가는 여기에 */}
           </div>
         </section>
 
-        {/* Team Section */}
+        {/* Team Section - 개선된 구조 */}
         <section id="team" className="py-24 px-4">
           <MotionDiv
             initial="offscreen"
@@ -149,46 +170,43 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-8">Team</h2>
               
               <div className="space-y-6">
-                <MotionDiv
-                  variants={cardVariants}
-                  className="flex items-center gap-6 p-6 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors"
-                >
-                  <Image 
-                    src="/d4rkst4rs.png" 
-                    alt="D4rkSt4rGod - 스튜디오 설립자 및 리드 개발자" 
-                    width={80} 
-                    height={80} 
-                    className="rounded-full"
-                    priority
-                  />
-                  <div>
-                    <div className="font-medium text-xl"><a href='https://naver.me/xTS8njxd'>D4rkSt4rGod</a></div>
-                    <div className="text-gray-400">스튜디오 설립자</div>
-                  </div>
-                </MotionDiv>
+                {teamMembers.map((member, index) => (
+                  <MotionDiv
+                    key={member.name}
+                    variants={cardVariants}
+                    className="flex items-center gap-6 p-6 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors"
+                  >
+                    <Image 
+                      src={member.image} 
+                      alt={member.alt} 
+                      width={80} 
+                      height={80} 
+                      className="rounded-full"
+                      priority={index === 0} // 첫 번째 멤버만 priority
+                    />
+                    <div>
+                      <div className="font-medium text-xl">
+                        <a 
+                          href={member.link} 
+                          className="hover:text-gray-300 transition-colors"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {member.name}
+                        </a>
+                      </div>
+                      <div className="text-gray-400">{member.role}</div>
+                    </div>
+                  </MotionDiv>
+                ))}
               </div>
 
-              <div className="space-y-6">
-                <MotionDiv
-                  variants={cardVariants}
-                  className="flex items-center gap-6 p-6 border border-gray-700 rounded-lg hover:border-gray-500 transition-colors"
-                >
-                  <Image 
-                    src="/d4rkst4rs.png" 
-                    alt="흑지장 - 에셋 팀장" 
-                    width={80} 
-                    height={80} 
-                    className="rounded-full"
-                    priority
-                  />
-                  <div>
-                    <div className="font-medium text-xl"><a href='https://playentry.org/profile/6861fa919d7602c5610c5a7c/project?sort=created&term=all&isOpen=all'>흑지장</a></div>
-                    <div className="text-gray-400">에셋 팀장</div>
-                  </div>
-                </MotionDiv>
+              {/* 향후 팀원 추가를 위한 주석 */}
+              {/* 
+              <div className="mt-8 text-center">
+                <p className="text-gray-500">더 많은 인재를 모집 중입니다!</p>
               </div>
-
-              {/* 팀추가는 여기에 */}
+              */}
             </div>
           </MotionDiv>
         </section>
