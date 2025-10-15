@@ -50,13 +50,6 @@ const teamMembers = [
     link: "https://naver.me/xTS8njxd",
     alt: "D4rkSt4rGod - 스튜디오 설립자 및 리드 개발자"
   },
-  {
-    name: "흑지장",
-    role: "디자인 팀장", 
-    image: "/d4rkst4rs.png", // 실제 이미지 경로로 변경해주세요
-    link: "https://playentry.org/profile/6861fa919d7602c5610c5a7c/project?sort=created&term=all&isOpen=all",
-    alt: "흑지장 - 디자인 팀장"
-  },
   // {
   //   name: "새로운 팀원", // 실제 이름으로 변경해주세요
   //   role: "역할", // 실제 역할로 변경해주세요
