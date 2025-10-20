@@ -86,7 +86,7 @@ export default function Home() {
             transition={{ duration: 1 }}
             className="hero-title text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight max-w-6xl font-bold"
           >
-            Before there was light there was darkness.
+            Just because you can't see it doesn't mean it doesn't exist.
           </MotionDiv>
           <MotionDiv 
             initial={{ opacity: 0 }} 
@@ -94,7 +94,7 @@ export default function Home() {
             transition={{ delay: 0.6, duration: 1 }}
             className="subtitle mt-8 text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl"
           >
-            빛이 있기 전에 어둠이 있었다.
+            보이지 않는다고 존재하지 않는것은 아니다.
           </MotionDiv>
         </main>
 
