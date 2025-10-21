@@ -68,7 +68,7 @@ export default function Home() {
         <meta name="keywords" content="게임개발, 소프트웨어, 개발스튜디오, D4rkSt4rs, 게임제작, 인디게임" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="D4rkSt4rs Studio" />
-        <meta property="og:description" content="Before there was light there was darkness." />
+        <meta property="og:description" content="Just because you can't see it doesn't mean it doesn't exist." />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -84,7 +84,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1 }}
-            className="hero-title text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight max-w-6xl font-bold"
+            className="hero-title text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight max-w-6xl font-bold"
           >
             Just because you can't see it doesn't mean it doesn't exist.
           </MotionDiv>
@@ -97,21 +97,6 @@ export default function Home() {
             보이지 않는다고 존재하지 않는것은 아니다.
           </MotionDiv>
         </main>
-
-        {/* About Section */}
-        <section id="about" className="py-24 px-4">
-          <MotionDiv
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={sectionVariants}
-          >
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-6">About</h2>
-              <p className="text-lg text-gray-300">D4rkSt4rs는 게임과 소프트웨어를 개발하는 스튜디오입니다. 게임 개발, 도구 제작, 시스템 설계를 진행합니다.</p>
-            </div>
-          </MotionDiv>
-        </section>
 
         {/* Projects Section */}
         <section id="projects" className="py-24 px-4">
@@ -193,13 +178,6 @@ export default function Home() {
                   </MotionDiv>
                 ))}
               </div>
-
-              {/* 향후 팀원 추가를 위한 주석 */}
-              {/* 
-              <div className="mt-8 text-center">
-                <p className="text-gray-500">더 많은 인재를 모집 중입니다!</p>
-              </div>
-              */}
             </div>
           </MotionDiv>
         </section>
