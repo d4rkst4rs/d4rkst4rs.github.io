@@ -98,6 +98,21 @@ export default function Home() {
           </MotionDiv>
         </main>
 
+        {/* About Section - 다시 추가 */}
+        <section id="about" className="py-24 px-4">
+          <MotionDiv
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariants}
+          >
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold mb-6">About</h2>
+              <p className="text-lg text-gray-300">D4rkSt4rs는 게임과 소프트웨어를 개발하는 스튜디오입니다. 게임 개발, 도구 제작, 시스템 설계를 진행합니다.</p>
+            </div>
+          </MotionDiv>
+        </section>
+
         {/* Projects Section */}
         <section id="projects" className="py-24 px-4">
           <div className="max-w-4xl mx-auto">
