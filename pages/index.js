@@ -41,7 +41,7 @@ const cardVariants = {
   }
 }
 
-// 팀 멤버 데이터 - 이렇게 분리해두면 관리가 쉬워요!
+// 팀 멤버 데이터
 const teamMembers = [
   {
     name: "D4rkSt4rGod",
@@ -49,14 +49,7 @@ const teamMembers = [
     image: "/d4rkst4rs.png",
     link: "https://naver.me/xTS8njxd",
     alt: "D4rkSt4rGod - 스튜디오 설립자 및 리드 개발자"
-  },
-  // {
-  //   name: "새로운 팀원", // 실제 이름으로 변경해주세요
-  //   role: "역할", // 실제 역할로 변경해주세요
-  //   image: "/d4rkst4rs.png", // 실제 이미지 경로로 변경해주세요
-  //   link: "#", // 실제 링크로 변경해주세요
-  //   alt: "새로운 팀원 - 역할" // 실제 정보로 변경해주세요
-  // }
+  }
 ]
 
 export default function Home() {
@@ -92,13 +85,13 @@ export default function Home() {
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             transition={{ delay: 0.6, duration: 1 }}
-            className="subtitle mt-8 text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl"
+            className="subtitle mt-8 text-lg md:text-xl lg:text-2xl text-white max-w-3xl"
           >
             보이지 않는다고 존재하지 않는것은 아니다.
           </MotionDiv>
         </main>
 
-        {/* About Section - 다시 추가 */}
+        {/* About Section */}
         <section id="about" className="py-24 px-4">
           <MotionDiv
             initial="offscreen"
@@ -108,7 +101,7 @@ export default function Home() {
           >
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold mb-6">About</h2>
-              <p className="text-lg text-gray-300">D4rkSt4rs는 게임과 소프트웨어를 개발하는 스튜디오입니다. 게임 개발, 도구 제작, 시스템 설계를 진행합니다.</p>
+              <p className="text-lg text-white">D4rkSt4rs는 게임과 소프트웨어를 개발하는 스튜디오입니다. 게임 개발, 도구 제작, 시스템 설계를 진행합니다.</p>
             </div>
           </MotionDiv>
         </section>
@@ -133,7 +126,7 @@ export default function Home() {
               className="grid gap-6"
             >
               <div className="group p-6 border border-gray-700 rounded-lg hover:border-gray-500 transition-all duration-300 cursor-pointer">
-                <h3 className="font-bold text-xl mb-3 group-hover:text-gray-300 transition-colors">
+                <h3 className="font-bold text-xl mb-3 group-hover:text-white transition-colors">
                   <a 
                     href='https://playentry.org/project/68c6b22648d3d76bd9234c49' 
                     className="block"
@@ -143,7 +136,7 @@ export default function Home() {
                     Escape The BackRooms in Entry
                   </a>
                 </h3>
-                <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
+                <p className="text-white group-hover:text-white transition-colors">
                   엔트리 플랫폼에서 구현한 공포 어드벤처 게임
                 </p>
               </div>
@@ -151,7 +144,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Team Section - 개선된 구조 */}
+        {/* Team Section */}
         <section id="team" className="py-24 px-4">
           <MotionDiv
             initial="offscreen"
@@ -175,20 +168,20 @@ export default function Home() {
                       width={80} 
                       height={80} 
                       className="rounded-full"
-                      priority={index === 0} // 첫 번째 멤버만 priority
+                      priority={index === 0}
                     />
                     <div>
                       <div className="font-medium text-xl">
                         <a 
                           href={member.link} 
-                          className="hover:text-gray-300 transition-colors"
+                          className="hover:text-white transition-colors"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           {member.name}
                         </a>
                       </div>
-                      <div className="text-gray-400">{member.role}</div>
+                      <div className="text-white">{member.role}</div>
                     </div>
                   </MotionDiv>
                 ))}
@@ -219,7 +212,7 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 text-center text-gray-500">
+        <footer className="py-12 text-center text-white">
           <MotionDiv
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
